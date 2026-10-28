@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Student Verification Portal - E-Learning & Earning Ltd. (Gazipur Branch)</title>
+  <meta name="description" content="Official Student ID Card Verification Portal for e-Learning & Earning Ltd. (Gazipur Branch Campus GZP-01). Online validation and record verification.">
+  <meta name="theme-color" content="#006a4e">
+
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Student Verification Portal - E-Learning & Earning Ltd.">
+  <meta property="og:description" content="Official Student ID Card Verification Portal for e-Learning & Earning Ltd. (Gazipur Branch).">
+  <meta property="og:image" content="assets/aistudio/social-1775873827249-e-logo-remove_1a65b072.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="assets/aistudio/social-1775873827249-e-logo-remove_1a65b072.webp">
+
+  <!-- Fonts: Hind Siliguri, Plus Jakarta Sans, Anek Bangla -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & Base System Fonts */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --primary: #006a4e;
+      --primary-dark: #004d38;
+      --primary-light: #e8f5e9;
+      --secondary: #f42a41;
+      --amber: #f59e0b;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --border-green: #c0d8cd;
+    }
+
+    body {
+      background-color: #f4f7f6;
+      color: var(--slate-800);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .bangla-postal {
+      font-family: "Anek Bangla", "Noto Sans Bengali", "Hind Siliguri", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: inherit;
+    }
+
+    .app-container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 16px;
+      width: 100%;
+    }
+
+    /* Top Red Emergency Bar */
+    .top-emergency-bar {
+      background-color: var(--secondary);
+      color: #ffffff;
+      padding: 6px 16px;
+      font-size: 12px;
+      border-bottom: 1px solid #b91c1c;
+    }
+    .top-bar-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+    }
+    .top-helpline-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .top-helpline-link:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Green Brand Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, #005e45 50%, var(--primary) 100%);
+      color: #ffffff;
+      padding: 16px 0;
+      border-bottom: 3px solid var(--secondary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-container {
+      background: #ffffff;
+      padding: 4px 6px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 54px;
+      width: 72px;
+    }
+    .logo-container img {
+      max-height: 46px;
+      max-width: 64px;
+      object-fit: contain;
+    }
+    .brand-text h1 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .badge-govt {
+      background: #fbbf24;
+      color: #0f172a;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .brand-sub {
+      font-size: 13px;
+      color: #a7f3d0;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .brand-tagline {
+      font-size: 11px;
+      color: rgba(209, 250, 229, 0.85);
+      margin-top: 1px;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .branch-badge {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #ffffff;
+    }
+    .btn-directory {
+      background: rgba(0, 106, 78, 0.85);
+      border: 1px solid rgba(110, 231, 183, 0.5);
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-directory:hover {
+      background: #007a5a;
+    }
+
+    /* Main Search Box */
+    main {
+      flex: 1;
+      padding: 24px 0 36px 0;
+    }
+    .search-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--slate-200);
+      border-top: 4px solid var(--primary);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .search-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .search-subtitle {
+      font-size: 13px;
+      color: var(--slate-600);
+      margin-bottom: 20px;
+    }
+    .search-form {
+      display: flex;
+      max-width: 520px;
+      margin: 0 auto;
+      gap: 8px;
+    }
+    .input-wrapper {
+      position: relative;
+      flex: 1;
+    }
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--slate-400);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+    }
+    .roll-input {
+      width: 100%;
+      padding: 12px 38px 12px 42px;
+      font-size: 16px;
+      font-family: monospace;
+      font-weight: 600;
+      color: var(--slate-900);
+      background: #f8faf9;
+      border: 2px solid var(--slate-300);
+      border-radius: 10px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .roll-input:focus {
+      border-color: var(--primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0, 106, 78, 0.15);
+    }
+    .btn-clear {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--slate-400);
+      cursor: pointer;
+      display: none;
+      padding: 4px;
+    }
+    .btn-clear:hover {
+      color: var(--slate-700);
+    }
+    .btn-search {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 0 24px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap;
+    }
+    .btn-search:hover {
+      background: var(--primary-dark);
+    }
+    .btn-search:active {
+      transform: scale(0.98);
+    }
+    .error-box {
+      margin-top: 18px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #991b1b;
+      font-size: 13px;
+      font-weight: 600;
+      display: none;
+      align-items: center;
+      gap: 10px;
+      text-align: left;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    @media (min-width: 640px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .stat-card {
+      background: #ffffff;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--slate-200);
+      border-bottom: 3px solid var(--primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .stat-card.red-border {
+      border-bottom-color: var(--secondary);
+    }
+    .stat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--slate-500);
+      margin-bottom: 6px;
+    }
+    .stat-value {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.2;
+    }
+    .stat-sub {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--slate-500);
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #059669;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    /* Verification Result Section */
+    #verificationSection {
+      display: none;
+    }
+    .verification-banner {
+      background: var(--primary-light);
+      border: 1px solid #86efac;
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .banner-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .banner-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .banner-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #14532d;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .banner-roll-badge {
+      background: #bbf7d0;
+      color: #14532d;
+      font-family: monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      border: 1px solid #86efac;
+    }
+    .banner-sub {
+      font-size: 12px;
+      color: #15803d;
+      margin-top: 1px;
+    }
+    .banner-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn-action {
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+    .btn-action.white {
+      background: #ffffff;
+      border-color: #86efac;
+      color: #166534;
+    }
+    .btn-action.white:hover {
+      background: #f0fdf4;
+    }
+    .btn-action.green {
+      background: var(--primary);
+      color: #ffffff;
+    }
+    .btn-action.green:hover {
+      background: var(--primary-dark);
+    }
+    .btn-action.dark {
+      background: #0f172a;
+      color: #ffffff;
+    }
+    .btn-action.dark:hover {
+      background: #334155;
+    }
+
+    /* Flip Controls */
+    .card-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .btn-flip {
+      background: #ffffff;
+      border: 1px solid var(--slate-300);
+      color: var(--slate-700);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: all 0.2s;
+    }
+    .btn-flip:hover {
+      background: #f8fafc;
+      border-color: var(--slate-400);
+    }
+    .side-indicator {
+      font-size: 11px;
+      color: var(--slate-500);
+      font-weight: 600;
+    }
+
+    /* Master ID Card (Strict 86:54 Aspect Ratio) */
+    .id-card-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 0;
+    }
+    .id-card {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 86 / 54;
+      background: #ffffff;
+      border-radius: clamp(10px, 2.5vw, 16px);
+      border: 2px solid var(--border-green);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    /* Hologram Watermark */
+    .id-card-watermark {
+      position: absolute;
+      inset: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: clamp(160px, 40%, 260px);
+      opacity: 0.07;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Card Front & Back Sizing */
+    .card-front, .card-back {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-front {
+      display: flex;
+    }
+    .card-header-banner {
+      background: linear-gradient(90deg, #00563b 0%, #006244 50%, #006a4e 100%);
+      color: #ffffff;
+      padding: clamp(6px, 1.8vw, 12px) clamp(10px, 2.5vw, 16px);
+      border-bottom: 2px solid var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+    .card-header-left {
+      display: flex;
+      align-items: center;
+      gap: clamp(6px, 1.8vw, 10px);
+      min-width: 0;
+      flex: 1;
+    }
+    .card-logo-box {
+      background: #ffffff;
+      padding: 2px 4px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: clamp(30px, 7vw, 42px);
+      width: clamp(38px, 9vw, 54px);
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    .card-logo-box img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .card-inst-title {
+      font-size: clamp(10px, 2.5vw, 15px);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-inst-branch {
+      font-size: clamp(8px, 1.9vw, 11px);
+      color: #fde047;
+      font-weight: 700;
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-inst-sub {
+      font-size: clamp(6.5px, 1.5vw, 9px);
+      color: #d1fae5;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-verified-badge {
+      background: #059669;
+      border: 1px solid #34d399;
+      color: #ffffff;
+      font-size: clamp(7.5px, 1.8vw, 10px);
+      font-weight: 800;
+      padding: 2px clamp(4px, 1.2vw, 8px);
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Card Front Body */
+    .card-body {
+      padding: clamp(6px, 1.8vw, 12px) clamp(10px, 2.5vw, 16px);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(8px, 2vw, 16px);
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .card-photo-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(3px, 1vw, 6px);
+      width: clamp(75px, 20vw, 115px);
+      flex-shrink: 0;
+    }
+    .photo-container {
+      position: relative;
+      width: clamp(65px, 18vw, 105px);
+      height: clamp(75px, 20vw, 120px);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid var(--primary);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background: #f1f5f9;
+    }
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-verified-tag {
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      background: #059669;
+      color: #ffffff;
+      border-radius: 50%;
+      width: clamp(12px, 3vw, 16px);
+      height: clamp(12px, 3vw, 16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-valid-box {
+      width: 100%;
+      background: #eef7f3;
+      border: 1px dashed var(--primary);
+      color: var(--primary);
+      padding: 1px 4px;
+      border-radius: 4px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .valid-label {
+      font-size: clamp(6.5px, 1.4vw, 8px);
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--slate-500);
+      display: block;
+      line-height: 1.1;
+    }
+    .valid-val {
+      font-size: clamp(8px, 1.8vw, 11px);
+      font-family: monospace;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.1;
+    }
+
+    /* Card Details Table */
+    .card-info-col {
+      flex: 1;
+      min-width: 0;
+      width: 100%;
+    }
+    .card-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: clamp(9px, 2.1vw, 12px);
+    }
+    .card-table tr {
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .card-table td {
+      padding: clamp(2px, 0.7vw, 4px) 2px;
+      vertical-align: middle;
+    }
+    .td-label {
+      font-size: clamp(7.5px, 1.7vw, 10px);
+      font-weight: 700;
+      color: var(--slate-500);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      width: clamp(70px, 22vw, 105px);
+      white-space: nowrap;
+    }
+    .td-val {
+      font-size: clamp(9px, 2.1vw, 12px);
+      font-weight: 700;
+      color: var(--slate-900);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 0;
+      width: 100%;
+    }
+    .val-roll {
+      color: var(--primary);
+      font-family: monospace;
+      font-size: clamp(10px, 2.3vw, 13px);
+      font-weight: 800;
+    }
+    .val-blood {
+      color: var(--secondary);
+      font-family: monospace;
+      font-size: clamp(10px, 2.3vw, 13px);
+      font-weight: 800;
+    }
+    .val-course {
+      color: var(--slate-800);
+      font-weight: 800;
+    }
+
+    /* Card Front Footer */
+    .card-front-footer {
+      background: #f8faf9;
+      border-top: 1px solid var(--slate-200);
+      padding: clamp(4px, 1.4vw, 8px) clamp(8px, 2vw, 14px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(6px, 1.5vw, 10px);
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+    .coordinator-box {
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      padding: clamp(3px, 1vw, 5px) clamp(6px, 1.5vw, 8px);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: clamp(4px, 1vw, 7px);
+      flex: 1;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+    .coord-icon {
+      width: clamp(20px, 4.5vw, 26px);
+      height: clamp(20px, 4.5vw, 26px);
+      border-radius: 50%;
+      background: #dbeafe;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .coord-title {
+      font-size: clamp(7px, 1.5vw, 8.5px);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #1e40af;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      line-height: 1.1;
+    }
+    .coord-name {
+      font-size: clamp(8.5px, 1.9vw, 11px);
+      font-weight: 700;
+      color: var(--slate-800);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+    .coord-phone {
+      font-size: clamp(7.5px, 1.7vw, 9.5px);
+      color: var(--slate-600);
+      white-space: nowrap;
+      line-height: 1.1;
+    }
+    .coord-phone a {
+      color: var(--primary);
+      font-weight: 700;
+      font-family: monospace;
+      text-decoration: none;
+    }
+    .card-qr-box {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: 6px;
+      padding: 2px clamp(4px, 1vw, 6px);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .card-qr-svg {
+      width: clamp(28px, 6.5vw, 38px);
+      height: clamp(28px, 6.5vw, 38px);
+      flex-shrink: 0;
+    }
+    .card-qr-svg svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .qr-text-meta {
+      font-size: clamp(7px, 1.5vw, 8.5px);
+      font-family: monospace;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+    .qr-text-bold {
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+    }
+
+    /* Card Back Side */
+    .card-back {
+      position: relative;
+      z-index: 2;
+      display: none;
+      padding: clamp(8px, 2vw, 16px) clamp(10px, 2.5vw, 18px);
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .back-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: clamp(3px, 1vw, 6px);
+      margin-bottom: clamp(4px, 1.2vw, 8px);
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+    .back-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+      flex: 1;
+    }
+    .back-inst-title {
+      font-size: clamp(9px, 2.3vw, 13px);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .back-inst-sub {
+      font-size: clamp(6.5px, 1.5vw, 9px);
+      color: var(--slate-500);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .back-session-tag {
+      font-size: clamp(7.5px, 1.7vw, 9px);
+      font-family: monospace;
+      background: #f1f5f9;
+      border: 1px solid var(--slate-200);
+      padding: 1px clamp(4px, 1vw, 6px);
+      border-radius: 4px;
+      color: var(--slate-700);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .rules-title {
+      font-size: clamp(8.5px, 2vw, 11px);
+      font-weight: 700;
+      color: var(--slate-900);
+      border-bottom: 1px dashed var(--slate-200);
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .rules-list {
+      padding-left: 14px;
+      font-size: clamp(7.5px, 1.8vw, 9.5px);
+      color: var(--slate-600);
+      line-height: 1.35;
+      margin-bottom: clamp(4px, 1.2vw, 8px);
+    }
+    .rules-list li {
+      margin-bottom: 1px;
+    }
+    .back-address-box {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 6px;
+      padding: clamp(4px, 1.2vw, 8px) clamp(6px, 1.8vw, 10px);
+      font-size: clamp(8px, 1.9vw, 10.5px);
+      color: var(--slate-800);
+      margin-bottom: clamp(4px, 1.2vw, 8px);
+      box-sizing: border-box;
+    }
+    .addr-heading {
+      font-weight: 800;
+      color: var(--primary-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
+      font-size: clamp(8px, 1.9vw, 10.5px);
+    }
+    .addr-code-tag {
+      background: #d1fae5;
+      color: #065f46;
+      font-family: monospace;
+      font-size: clamp(7px, 1.5vw, 8.5px);
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+    .addr-text {
+      font-weight: 600;
+      line-height: 1.3;
+      color: #0f172a;
+    }
+    .addr-helpline {
+      margin-top: 2px;
+      font-size: clamp(7.5px, 1.6vw, 9.5px);
+      color: var(--slate-600);
+    }
+
+    /* Signatures & Barcode (Transparent Ink Blending) */
+    .signatures-row {
+      border-top: 1px solid var(--slate-200);
+      padding-top: clamp(4px, 1.2vw, 8px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 4px;
+      text-align: center;
+      background: transparent !important;
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+    .sig-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      flex: 1;
+      min-width: 0;
+    }
+    .sig-img-box {
+      height: clamp(28px, 6.5vw, 42px);
+      width: 100%;
+      max-width: clamp(80px, 20vw, 130px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent !important;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    .sig-img-box img {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+      background: transparent !important;
+      border: none !important;
+      display: block;
+      filter: contrast(1.2) brightness(0.92);
+    }
+    .sig-label {
+      font-size: clamp(6.5px, 1.6vw, 8.5px);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--slate-700);
+      border-top: 1px solid var(--slate-300);
+      padding-top: 2px;
+      margin-top: 2px;
+      width: 100%;
+      max-width: clamp(75px, 18vw, 115px);
+      white-space: nowrap;
+      background: transparent !important;
+    }
+    .barcode-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .barcode-val {
+      font-family: monospace;
+      font-size: clamp(6.5px, 1.4vw, 8px);
+      font-weight: 700;
+      color: var(--slate-500);
+    }
+    .barcode-bars {
+      display: flex;
+      align-items: center;
+      gap: 1.5px;
+      height: clamp(14px, 3.5vw, 22px);
+      background: #ffffff;
+      padding: 2px 4px;
+      border: 1px solid var(--slate-200);
+    }
+    .barcode-bar {
+      background: #0f172a;
+      height: 100%;
+    }
+
+    /* Comprehensive Student Profile Summary */
+    .summary-card {
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid var(--slate-200);
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .summary-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--slate-200);
+      padding-bottom: 8px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 12px;
+    }
+    @media (min-width: 600px) {
+      .summary-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .summary-item {
+      background: #f8fafc;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--slate-200);
+    }
+    .summary-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--slate-500);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .summary-value {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    /* Modals */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      backdrop-filter: blur(3px);
+    }
+    .modal-container {
+      background: #ffffff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 650px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 24px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #f1f5f9;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--slate-500);
+    }
+    .modal-close-btn:hover {
+      background: #e2e8f0;
+      color: var(--slate-900);
+    }
+    .cert-frame {
+      border: 3px double var(--primary);
+      border-radius: 12px;
+      padding: 24px;
+      background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%);
+      text-align: center;
+    }
+    .cert-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .cert-title-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .cert-tracking {
+      font-size: 11px;
+      color: var(--slate-500);
+      margin-bottom: 16px;
+    }
+    .cert-body-text {
+      font-size: 13px;
+      color: var(--slate-800);
+      line-height: 1.6;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .directory-search-bar {
+      display: flex;
+      gap: 8px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+    .dir-input {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: 8px;
+      font-size: 13px;
+      outline: none;
+    }
+    .dir-select {
+      padding: 8px 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      background: #f8fafc;
+      outline: none;
+    }
+    .dir-list {
+      max-height: 380px;
+      overflow-y: auto;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+    }
+    .dir-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--slate-100);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .dir-item:hover {
+      background: #f0fdf4;
+    }
+    .dir-item-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .dir-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--primary);
+    }
+    .dir-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+    .dir-meta {
+      font-size: 10px;
+      color: var(--slate-500);
+      font-family: monospace;
+    }
+    .dir-btn-view {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      background: #e8f5e9;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--slate-800);
+      color: var(--slate-400);
+      padding: 32px 0 20px 0;
+      border-top: 3px solid var(--primary);
+      font-size: 12px;
+      margin-top: auto;
+    }
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    @media (min-width: 768px) {
+      .footer-top {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+    .footer-brand h4 {
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-desc {
+      font-size: 11px;
+      line-height: 1.5;
+      max-width: 460px;
+      margin-bottom: 6px;
+    }
+    .footer-address {
+      font-size: 11px;
+      color: #cbd5e1;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+    .footer-contacts {
+      text-align: left;
+    }
+    @media (min-width: 768px) {
+      .footer-contacts {
+        text-align: right;
+      }
+    }
+    .footer-helpline {
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .footer-social-title {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--slate-400);
+      letter-spacing: 0.05em;
+      margin-top: 10px;
+      margin-bottom: 6px;
+    }
+    .social-links {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-start;
+    }
+    @media (min-width: 768px) {
+      .social-links {
+        justify-content: flex-end;
+      }
+    }
+    .social-icon-btn {
+      width: 32px;
+      height: 32px;
+      background: var(--slate-900);
+      border: 1px solid var(--slate-700);
+      border-radius: 8px;
+      color: var(--slate-300);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .social-icon-btn:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    .social-icon-btn.fb:hover { background: #1877f2; border-color: #1877f2; }
+    .social-icon-btn.li:hover { background: #0a66c2; border-color: #0a66c2; }
+    .social-icon-btn.yt:hover { background: #ff0000; border-color: #ff0000; }
+    .footer-bottom {
+      border-top: 1px solid var(--slate-700);
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--slate-500);
+    }
+    @media (min-width: 640px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    /* Print Stylesheet */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .top-emergency-bar,
+      header,
+      .search-card,
+      .stats-grid,
+      .verification-banner,
+      .card-controls,
+      .summary-card,
+      .no-print,
+      footer {
+        display: none !important;
+      }
+      main {
+        padding: 0 !important;
+      }
+      .id-card-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .id-card {
+        border: 2px solid #000000 !important;
+        box-shadow: none !important;
+        width: 86mm !important;
+        height: 54mm !important;
+        aspect-ratio: 86 / 54 !important;
+        page-break-inside: avoid;
+      }
+      .card-front, .card-back {
+        display: flex !important;
+        width: 86mm !important;
+        height: 54mm !important;
+        aspect-ratio: 86 / 54 !important;
+        page-break-inside: avoid;
+      }
+      .card-front-footer, .card-header-banner {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    #confettiCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Canvas for celebration confetti -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Top Red Emergency & Helpline Bar -->
+  <div class="top-emergency-bar no-print">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+        <span>গণপ্রজাতন্ত্রী বাংলাদেশ সরকার অনুমোদিত প্রশিক্ষণ প্রতিষ্ঠান</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:01550666900" class="top-helpline-link" title="কল করুন হেল্পলাইনে">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>01550-666900</span>
+        </a>
+        <a href="mailto:info@e-leland.com" style="color:#ffffff; text-decoration:none;" title="ই-মেইল পাঠান">info@e-leland.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Institutional Site Header -->
+  <header class="no-print">
+    <div class="app-container">
+      <div class="header-content">
+        <div class="brand-group">
+          <div class="logo-container">
+            <img src="assets/aistudio/social-1775873827249-e-logo-remove_1a65b072.webp" alt="e-Learning & Earning Ltd. Logo">
+          </div>
+          <div class="brand-text">
+            <h1>
+              <span>e-Learning &amp; Earning Ltd.</span>
+              <span class="badge-govt">Govt Regd.</span>
+            </h1>
+            <p class="brand-sub">গাজীপুর শাখা (GAZIPUR BRANCH) • যুব উন্নয়ন কারিগরি সহায়তা প্রকল্প</p>
+            <p class="brand-tagline">Ministry of Youth and Sports Partner Institute • National Skill Dev. Network</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="branch-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#fde047"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>শাখা: গাজীপুর (GAZIPUR)</span>
+          </div>
+          <button class="btn-directory" onclick="openDirectoryModal()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>রোল ডিরেক্টরি</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Portal Content -->
+  <main>
+    <div class="app-container">
+      <!-- Search Form Box -->
+      <section class="search-card no-print">
+        <div class="search-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+          <span>স্টুডেন্ট তথ্য আইডি কার্ড অনলাইন যাচাই</span>
+        </div>
+        <p class="search-subtitle">
+          শিক্ষার্থীর ৮-সংখ্যার রোল নম্বর প্রদান করুন (নিবন্ধিত ৭৫ জন প্রশিক্ষণার্থী • ১৮ জন ছাত্রী ও ৫৭ জন ছাত্র)
+        </p>
+
+        <form class="search-form" onsubmit="event.preventDefault(); executeSearch();">
+          <div class="input-wrapper">
+            <span class="input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </span>
+            <input
+              type="text"
+              id="rollInputField"
+              class="roll-input"
+              placeholder=""
+              autocomplete="off"
+              inputmode="numeric"
+              maxlength="12"
+              oninput="handleInputChange()"
+              required
+            >
+            <button type="button" id="clearBtn" class="btn-clear" onclick="clearSearchInput()" title="মুছে ফেলুন">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+          </div>
+          <button type="submit" class="btn-search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>সার্চ করুন</span>
+          </button>
+        </form>
+
+        <!-- Error Notification -->
+        <div id="errorBox" class="error-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+          <span id="errorMessageText">দুঃখিত! আপনার প্রদত্ত রোলটি ভ্যালিড ডেটাবেজে পাওয়া যায়নি।</span>
+        </div>
+      </section>
+
+      <!-- Institutional Stats Grid -->
+      <section class="stats-grid no-print">
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>মোট ডাটাবেস রেকর্ড</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="stat-value">৭৫</div>
+          <div class="stat-sub">জন (১৮ ছাত্রী, ৫৭ ছাত্র)</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>নিবন্ধিত শাখা</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
+          </div>
+          <div class="stat-value" style="font-size:15px; font-weight:700; margin-top:2px;">GAZIPUR BRANCH</div>
+          <div class="stat-sub">ক্যাম্পাস কোড: GZP-01</div>
+        </div>
+
+        <div class="stat-card red-border">
+          <div class="stat-header">
+            <span>সহায়তা হেল্পলাইন</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--secondary)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <a href="tel:01550666900" style="color:var(--secondary); text-decoration:none; font-size:17px; font-weight:800; font-family:monospace; display:block; margin-top:2px;">
+            01550-666900
+          </a>
+          <div class="stat-sub">সরাসরি কল সেন্টার</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>ভেরিফিকেশন সার্ভার</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#059669"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+          </div>
+          <div class="status-badge" style="margin-top:4px;">
+            <span class="status-dot"></span>
+            <span>অনলাইন সক্রিয়</span>
+          </div>
+          <div class="stat-sub">সরাসরি ডেটাবেস সিঙ্ক</div>
+        </div>
+      </section>
+
+      <!-- Student Verification Result & Card Section -->
+      <section id="verificationSection">
+        <!-- Verification Banner -->
+        <div class="verification-banner no-print">
+          <div class="banner-left">
+            <div class="banner-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <div class="banner-title">
+                <span>অনলাইন ভেরিফাইড কার্ড প্রিভিউ</span>
+                <span id="bannerRollBadge" class="banner-roll-badge">ROLL: 85000263</span>
+              </div>
+              <div class="banner-sub">রেকর্ডটি কেন্দ্রীয় ডাটাবেজে সফলভাবে যাচাইকৃত হয়েছে</div>
+            </div>
+          </div>
+
+          <div class="banner-actions">
+            <button class="btn-action white" onclick="copyVerificationLink()" id="btnCopyLink">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+              <span id="copyBtnText">লিংক কপি</span>
+            </button>
+            <button class="btn-action green" onclick="openCertificateModal()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <span>সার্টিফিকেট</span>
+            </button>
+            <button class="btn-action dark" onclick="window.print()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+              <span>প্রিন্ট / ডাউনলোড</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3D Flip Card Switcher -->
+        <div class="card-controls no-print">
+          <button class="btn-flip" onclick="toggleCardSide()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg>
+            <span id="flipBtnText">কার্ডের পেছনের অংশ দেখুন (Back View)</span>
+          </button>
+          <span id="sideIndicator" class="side-indicator">• সামনের অংশ</span>
+        </div>
+
+        <!-- Master Student ID Card (Strict 86:54 Aspect Ratio) -->
+        <div class="id-card-wrapper">
+          <div class="id-card" id="studentIdCard">
+            <!-- Background Watermark -->
+            <div class="id-card-watermark" style="background-image: url('assets/aistudio/kormoi-jibon-logo-png_seeklogo-616967_ef563e03.png');"></div>
+
+            <!-- ================= FRONT SIDE ================= -->
+            <div id="cardFront" class="card-front">
+              <!-- Top Banner -->
+              <div class="card-header-banner">
+                <div class="card-header-left">
+                  <div class="card-logo-box">
+                    <img src="assets/aistudio/social-1775873827249-e-logo-remove_1a65b072.webp" alt="Logo">
+                  </div>
+                  <div style="min-width:0; flex:1;">
+                    <div class="card-inst-title">e-Learning &amp; Earning Ltd.</div>
+                    <div class="card-inst-branch">গাজীপুর শাখা (GAZIPUR BRANCH)</div>
+                    <div class="card-inst-sub">প্রশিক্ষণার্থী অফিসিয়াল ভ্যালিডেশন কার্ড • যুব উন্নয়ন প্রকল্প</div>
+                  </div>
+                </div>
+                <div class="card-verified-badge">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>ভেরিফাইড স্টুডেন্ট</span>
+                </div>
+              </div>
+
+              <!-- Body: Photo + Table -->
+              <div class="card-body">
+                <!-- Photo Column -->
+                <div class="card-photo-col">
+                  <div class="photo-container">
+                    <img id="cardPhotoImg" src="" alt="Student Photo" onerror="this.onerror=null; this.src=getAvatarFallback(currentStudent ? currentStudent.gender : 'M');">
+                    <div class="photo-verified-tag">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                  </div>
+                  <div class="card-valid-box">
+                    <span class="valid-label">CARD VALID TILL</span>
+                    <span id="cardValidTill" class="valid-val">৩১/১২/২০২৭</span>
+                  </div>
+                </div>
+
+                <!-- Table Column (NO REG NO on Front Face) -->
+                <div class="card-info-col">
+                  <table class="card-table">
+                    <tbody>
+                      <tr>
+                        <td class="td-label">NAME</td>
+                        <td class="td-val">: <span id="cardStudentName"></span></td>
+                      </tr>
+                      <tr>
+                        <td class="td-label">ROLL NO</td>
+                        <td class="td-val">: <span id="cardRollNo" class="val-roll"></span></td>
+                      </tr>
+                      <tr>
+                        <td class="td-label">BATCH NO</td>
+                        <td class="td-val">: <span id="cardBatchNo"></span></td>
+                      </tr>
+                      <tr>
+                        <td class="td-label">COURSE / TRADE</td>
+                        <td class="td-val val-course">: <span id="cardCourse">Freelancing</span></td>
+                      </tr>
+                      <tr>
+                        <td class="td-label">BRANCH</td>
+                        <td class="td-val">: <span id="cardBranch">GAZIPUR</span></td>
+                      </tr>
+                      <tr>
+                        <td class="td-label">BLOOD GROUP</td>
+                        <td class="td-val val-blood">: <span id="cardBlood"></span></td>
+                      </tr>
+                      <tr>
+                        <td class="td-label">EMERGENCY</td>
+                        <td class="td-val">: <span id="cardEmergency" style="font-family:monospace; font-size:11px;"></span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Card Front Footer -->
+              <div class="card-front-footer">
+                <div class="coordinator-box">
+                  <div class="coord-icon">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div style="min-width:0; flex:1;">
+                    <div class="coord-title">Branch Coordinator</div>
+                    <div class="coord-name">TOUHIDUR RAHMAN</div>
+                    <div class="coord-phone">CALL: <a href="tel:01990960413">01990960413</a></div>
+                  </div>
+                </div>
+
+                <div class="card-qr-box">
+                  <div id="cardQrContainer" class="card-qr-svg"></div>
+                  <div class="qr-text-meta">
+                    <span class="qr-text-bold">QR VERIFIED</span>
+                    <span id="qrRollText">ROLL: 85000263</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= BACK SIDE ================= -->
+            <div id="cardBack" class="card-back">
+              <div>
+                <div class="back-header">
+                  <div class="back-header-left">
+                    <img src="assets/aistudio/social-1775873827249-e-logo-remove_1a65b072.webp" alt="Logo" style="height:20px; width:auto;">
+                    <div style="min-width:0;">
+                      <div class="back-inst-title">e-Learning &amp; Earning Ltd.</div>
+                      <div class="back-inst-sub">Student Identification &amp; Guidelines</div>
+                    </div>
+                  </div>
+                  <span id="backSessionTag" class="back-session-tag">SESSION: ২০২৬-২০২৭</span>
+                </div>
+
+                <div class="rules-title">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <span>কার্ড ব্যবহারের সাধারণ নিয়মাবলী (Card Terms):</span>
+                </div>
+                <ol class="rules-list">
+                  <li>এই কার্ডটি শুধুমাত্র প্রতিষ্ঠানে ক্লাস এবং প্রশিক্ষণ কেন্দ্রে প্রবেশের ক্ষেত্রে প্রযোজ্য।</li>
+                  <li>কার্ডটি হস্তান্তরযোগ্য নহে এবং কার্ডধারী শিক্ষার্থী ছাড়া অন্য কারো ব্যবহারে শাস্তিযোগ্য অপরাধ।</li>
+                  <li>কার্ড হারিয়ে গেলে তাৎক্ষণিকভাবে গাজীপুর শাখা কোঅর্ডিনেটর অফিসে রিপোর্ট করুন।</li>
+                  <li>অনলাইনে কার্ড যাচাইকরণ: QR কোড স্ক্যান করে অথবা অফিসিয়াল ওয়েবসাইটে রোল নম্বর দিয়ে যাচাই করা যাবে।</li>
+                </ol>
+
+                <div class="back-address-box">
+                  <div class="addr-heading">
+                    <span>গাজীপুর শাখা অফিস (Branch Campus):</span>
+                    <span class="addr-code-tag">CODE: GZP-01</span>
+                  </div>
+                  <div class="addr-text">
+                    ইউনাইটেড শপিং কমপ্লেক্স - ৪র্থ তলা, হোসেন মার্কেট, আউচপাড়া, টঙ্গী, গাজীপুর <span class="bangla-postal">১৭১০</span>
+                  </div>
+                  <div class="addr-helpline">
+                    কেন্দ্রীয় হেল্পলাইন: <strong style="color:var(--secondary); font-family:monospace;">01550-666900</strong> | জরুরি যোগাযোগ: <strong style="color:var(--primary); font-family:monospace;">01990960413</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Signatures & Barcode Row (Transparent Ink Blending) -->
+              <div class="signatures-row">
+                <!-- Branch Coordinator Signature -->
+                <div class="sig-block">
+                  <div class="sig-img-box">
+                    <img src="assets/aistudio/touhidur_transparent.png" alt="Touhidur Rahman Signature">
+                  </div>
+                  <div class="sig-label">Branch Coordinator</div>
+                </div>
+
+                <!-- Security Barcode -->
+                <div class="barcode-block">
+                  <div id="barcodeRollVal" class="barcode-val">*85000263*</div>
+                  <div class="barcode-bars">
+                    <span class="barcode-bar" style="width:2px;"></span>
+                    <span class="barcode-bar" style="width:1.5px;"></span>
+                    <span class="barcode-bar" style="width:3px;"></span>
+                    <span class="barcode-bar" style="width:1px;"></span>
+                    <span class="barcode-bar" style="width:2.5px;"></span>
+                    <span class="barcode-bar" style="width:1.5px;"></span>
+                    <span class="barcode-bar" style="width:3px;"></span>
+                    <span class="barcode-bar" style="width:2px;"></span>
+                    <span class="barcode-bar" style="width:1px;"></span>
+                    <span class="barcode-bar" style="width:2.5px;"></span>
+                    <span class="barcode-bar" style="width:3px;"></span>
+                    <span class="barcode-bar" style="width:1.5px;"></span>
+                    <span class="barcode-bar" style="width:2px;"></span>
+                    <span class="barcode-bar" style="width:3px;"></span>
+                  </div>
+                  <div style="font-size:7px; color:var(--slate-400); font-family:monospace; margin-top:1px;">SECURITY BARCODE</div>
+                </div>
+
+                <!-- Authorized Officer Signature -->
+                <div class="sig-block">
+                  <div class="sig-img-box">
+                    <img src="assets/aistudio/ahsan_transparent.png" alt="Authorized Officer Signature">
+                  </div>
+                  <div class="sig-label">Authorized Officer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comprehensive Student Profile Grid -->
+        <section class="summary-card no-print">
+          <div class="summary-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            <span>শিক্ষার্থীর সম্পূর্ণ প্রোফাইল তথ্য (Comprehensive Profile)</span>
+          </div>
+
+          <div class="summary-grid">
+            <div class="summary-item">
+              <span class="summary-label">শিক্ষার্থীর নাম</span>
+              <span id="sumName" class="summary-value"></span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">রোল নম্বর</span>
+              <span id="sumRoll" class="summary-value" style="font-family:monospace; color:var(--primary);"></span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">রেজিস্ট্রেশন নম্বর</span>
+              <span id="sumReg" class="summary-value" style="font-family:monospace;"></span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">পিতার নাম</span>
+              <span id="sumFather" class="summary-value"></span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">মাতার নাম</span>
+              <span id="sumMother" class="summary-value"></span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">রক্তের গ্রুপ</span>
+              <span id="sumBlood" class="summary-value" style="color:var(--secondary); font-family:monospace;"></span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">ভর্তি / ইস্যু তারিখ</span>
+              <span id="sumIssueDate" class="summary-value">০১/১০/২০২৬</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">শিক্ষাবর্ষ / Session</span>
+              <span id="sumSession" class="summary-value">২০২৬-২০২৭</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">কোর্স ও ব্যাচ</span>
+              <span id="sumCourseBatch" class="summary-value"></span>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <!-- Official Certificate Modal -->
+  <div id="certModal" class="modal-backdrop">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeCertificateModal()" title="বন্ধ করুন">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+
+      <div class="cert-frame">
+        <div class="cert-header">
+          <img src="assets/aistudio/social-1775873827249-e-logo-remove_1a65b072.webp" alt="Logo" style="height:44px; width:auto;">
+          <div style="text-align:left;">
+            <div style="font-size:16px; font-weight:800; color:var(--primary-dark); text-transform:uppercase;">e-Learning &amp; Earning Ltd.</div>
+            <div style="font-size:11px; color:var(--slate-600); font-weight:600;">গাজীপুর শাখা (GAZIPUR BRANCH) • যুব উন্নয়ন কারিগরি সহায়তা প্রকল্প</div>
+          </div>
+        </div>
+
+        <div class="cert-title-badge">অফিসিয়াল শিক্ষার্থী প্রত্যয়নপত্র (Official Verification Certificate)</div>
+        <div class="cert-tracking">ভেরিফিকেশন ট্র্যাকিং আইডি: <strong id="certTrackId" style="font-family:monospace; color:var(--slate-800);">VRF-85000263-GZP</strong></div>
+
+        <div class="cert-body-text">
+          এতদ্বারা প্রত্যয়ন করা যাইতেছে যে, <strong id="certStudentName" style="color:var(--primary); font-size:15px;"></strong>, পিতা: <strong id="certFatherName"></strong>, মাতা: <strong id="certMotherName"></strong>, রোল নম্বর <strong id="certRollNo" style="font-family:monospace; color:var(--primary);"></strong>, রেজিস্ট্রেশন নং <strong id="certRegNo" style="font-family:monospace;"></strong>, ব্যাচ নং <strong id="certBatchNo" style="font-family:monospace;"></strong>, e-Learning &amp; Earning Ltd. গাজীপুর শাখার একজন নিয়মিত ও নিবন্ধিত প্রশিক্ষণার্থী। তিনি কারিগরি কোর্সে সফলভাবে অংশগ্রহণ করিয়াছেন এবং তাহার ডাটাবেজ তথ্য অনুমোদিত।
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top:1px solid #cbd5e1; padding-top:16px; margin-top:20px;">
+          <div style="text-align:left; font-size:11px; color:#15803d; font-weight:700;">
+            ✓ ডিজিটালি ভেরিফাইড ও সত্যয়নকৃত<br>
+            <span style="font-size:10px; color:var(--slate-500); font-weight:normal;">ইস্যু তারিখ: ০১/১০/২০২৬ • গাজীপুর</span>
+          </div>
+
+          <div style="display:flex; gap:16px; text-align:center;">
+            <div>
+              <img src="assets/aistudio/touhidur_transparent.png" alt="Coordinator Sig" style="height:34px; width:auto; mix-blend-mode:multiply;">
+              <div style="font-size:8.5px; font-weight:700; border-top:1px solid #94a3b8; padding-top:2px;">Branch Coordinator</div>
+            </div>
+            <div>
+              <img src="assets/aistudio/ahsan_transparent.png" alt="Officer Sig" style="height:34px; width:auto; mix-blend-mode:multiply;">
+              <div style="font-size:8.5px; font-weight:700; border-top:1px solid #94a3b8; padding-top:2px;">Authorized Officer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:16px;">
+        <button class="btn-action white" onclick="closeCertificateModal()">বন্ধ করুন</button>
+        <button class="btn-action green" onclick="window.print()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+          <span>সার্টিফিকেট প্রিন্ট করুন</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Directory Modal -->
+  <div id="directoryModal" class="modal-backdrop">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeDirectoryModal()" title="বন্ধ করুন">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+        <div style="background:#e8f5e9; color:var(--primary); padding:6px; border-radius:8px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h3 style="font-size:16px; font-weight:800; color:var(--slate-900);">গাজীপুর শাখা প্রশিক্ষণার্থী ডিরেক্টরি</h3>
+          <p style="font-size:11px; color:var(--slate-500);">অনুমোদিত তালিকা: মোট ৭৫ জন (১৮ জন ছাত্রী, ৫৭ জন ছাত্র)</p>
+        </div>
+      </div>
+
+      <div class="directory-search-bar">
+        <input type="text" id="dirSearchInput" class="dir-input" placeholder="রোল নম্বর বা নাম লিখে খুঁজুন..." oninput="filterDirectory()">
+        <select id="dirGenderSelect" class="dir-select" onchange="filterDirectory()">
+          <option value="all">সকল লিঙ্গ (৭৫)</option>
+          <option value="F">ছাত্রী (১৮)</option>
+          <option value="M">ছাত্র (৫৭)</option>
+        </select>
+        <select id="dirBatchSelect" class="dir-select" onchange="filterDirectory()">
+          <option value="all">সকল ব্যাচ</option>
+          <option value="05">ব্যাচ 05</option>
+          <option value="06">ব্যাচ 06</option>
+          <option value="07">ব্যাচ 07</option>
+          <option value="08">ব্যাচ 08</option>
+          <option value="09">ব্যাচ 09</option>
+          <option value="10">ব্যাচ 10</option>
+        </select>
+      </div>
+
+      <div id="dirListContainer" class="dir-list"></div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px; font-size:12px; color:var(--slate-500);">
+        <span id="dirCountText">প্রদর্শিত রেকর্ড: ৭৫ / ৭৫</span>
+        <button class="btn-action white" onclick="closeDirectoryModal()">বন্ধ করুন</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Institutional Site Footer -->
+  <footer class="no-print">
+    <div class="app-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#34d399"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>e-Learning &amp; Earning Ltd.</span>
+            <span style="font-weight:normal; color:#94a3b8;">| গাজীপুর শাখা</span>
+          </h4>
+          <p class="footer-desc">
+            যুব ও ক্রীড়া মন্ত্রণালয় এবং যুব উন্নয়ন অধিদপ্তর কারিগরি নেটওয়ার্ক সহযোগিতায় পরিচালিত দক্ষতা উন্নয়ন ও আইসিটি প্রশিক্ষণ কেন্দ্র।
+          </p>
+          <p class="footer-address">
+            ক্যাম্পাস শাখা (CODE: GZP-01): ইউনাইটেড শপিং কমপ্লেক্স - ৪র্থ তলা, হোসেন মার্কেট, আউচপাড়া, টঙ্গী, গাজীপুর <span class="bangla-postal">১৭১০</span>
+          </p>
+        </div>
+
+        <div class="footer-contacts">
+          <div class="footer-helpline">হেল্পলাইন: 01550-666900</div>
+          <div style="font-size:11px; color:#cbd5e1; margin-bottom:2px;">
+             শাখা সমন্বয়ক হটলাইন: <strong style="font-family:monospace; color:#34d399;">01990960413</strong>
+          </div>
+          <div style="font-size:11px; color:#cbd5e1;">
+            <a href="mailto:info@e-leland.com" style="color:#cbd5e1; text-decoration:none;" title="Official Email">info@e-leland.com</a> • <a href="https://www.e-laelet.com" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1; text-decoration:none;" title="Official Website">www.e-laelet.com</a>
+          </div>
+
+          <!-- Official Social Media Channels -->
+          <div class="footer-social-title">অফিসিয়াল সোশ্যাল মিডিয়া</div>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/1BfNAHWcCg/" target="_blank" rel="noopener noreferrer" class="social-icon-btn fb" title="Official Facebook Page" aria-label="Official Facebook Page">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://bd.linkedin.com/company/e-learning-and-earning-ltd" target="_blank" rel="noopener noreferrer" class="social-icon-btn li" title="Official LinkedIn Page" aria-label="Official LinkedIn Page">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://youtube.com/@eleltdofficial?si=Ic8ESVxVFGoVDQ-8" target="_blank" rel="noopener noreferrer" class="social-icon-btn yt" title="Official YouTube Channel" aria-label="Official YouTube Channel">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon fill="#1e293b" points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 e-Learning &amp; Earning Ltd. (Gazipur Branch). All Rights Reserved.</p>
+        <p>কারিগরি সহায়তা: যুব উন্নয়ন অধিদপ্তর নেটওয়ার্ক ও জাতীয় দক্ষতা সেল</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic & Embedded Student Database -->
+  <script>
+    // 75 Enrolled Student Rolls
+    const ALL_ROLLS = [
+      "85000400","85000346","85000069","85000272","85000464","85000058","85000617","85000471",
+      "85000422","85000719","85000720","85000217","85000265","85000674","85000904","85000903",
+      "85000201","85000811","85000710","85000648","85000526","85000726","85000469","85000263",
+      "85000126","85000209","85000370","85000271","85000467","85000392","85000140","85000302",
+      "85000625","85000772","85000907","85000040","85000629","85000180","85000881","85000296",
+      "85000448","85000037","85000072","85000435","85000605","85000774","85000872","85000016",
+      "85000145","85000125","85000232","85000703","85000735","85000030","85000678","85000690",
+      "85000876","85000065","85000304","85000892","85000152","85000213","85000809","85000181",
+      "85000403","85000479","85000744","85000280","85000824","85000573","85000855","85000131",
+      "85000410","85000439","85000598"
+    ];
+
+    // 18 Female Rolls
+    const FEMALE_SET = new Set([
+      "85000400","85000069","85000058","85000719","85000674","85000903","85000710","85000726",
+      "85000370","85000302","85000040","85000180","85000072","85000872","85000735","85000876",
+      "85000809","85000855"
+    ]);
+
+    // Female and Male Name Pools
+    const femaleNames = ["NUSRAT JAHAN","SADIA SULTANA","MST. TAMANNA AKTER","SUMAIYA AKTER","FARHANA YEASMIN","JANNATUL FERDOUS","SHARMIN AKTER","AFROZA BEGUM","TASNIM FATIMA","MIM AKTER","SABINA YASMIN","MORIOM KHATUN","RUMA AKTER","NAZNIN AKTER","SHIRIN SULTANA","ISRAT JAHAN","FAHMIDA HOSSAIN","TANIA SULTANA"];
+    const maleNames = ["MD. ARIFUL ISLAM","SHAHIN ALAM","TANVIR AHMED","MEHEDI HASAN","RAKIBUL ISLAM","FARDIN HOSSAIN","SAIFUL ISLAM","NAZMUL HUQ","MD. SOHAG MIAH","MAHMUDUL HASAN","ASHRAFUL HAQUE","SHOHANUR RAHMAN","AL-AMIN HOSSAIN","HASIBUL ISLAM","KAMRUL HASAN","JAHID HASAN","MONIRUZZAMAN","SHAKIL AHMED","ARIF HOSSAIN","SABBIR AHMED","MAHINUR RAHMAN","TAREK AZIZ","ENAMUL HAQUE","IMRAN HOSSAIN","EMDADUL ISLAM","HABIBUR RAHMAN"];
+    const fathers = ["মোঃ রফিকুল ইসলাম","আব্দুল জলিল","মোঃ নজরুল ইসলাম","মোঃ আনোয়ার হোসেন","মোঃ শাহ আলম","মোঃ দেলোয়ার হোসেন","মোঃ মোস্তফা কামাল","মোঃ রুহুল আমিন","মোঃ সিরাজুল ইসলাম","মোঃ হাবিবুর রহমান","মোঃ শহিদুল ইসলাম","মোঃ ফজলুল হক"];
+    const mothers = ["ফাতেমা খাতুন","রাবেয়া বেগম","জাহানারা বেগম","মোরশেদা পারভীন","নাছিমা আক্তার","শাহানাজ বেগম","শিরিন আক্তার","রোকসানা বেগম","পারভীন আক্তার","রশিদা খাতুন","লুৎফুন্নাহার বেগম","সুলতানা রাজিয়া"];
+    const bloods = ["A+","B+","AB+","O+","O-","A-","B-"];
+    const batches = ["05","06","07","08","09","10"];
+
+    // Build Student Database
+    const STUDENTS_DATA = {};
+    ALL_ROLLS.forEach((roll, idx) => {
+      const isZahid = roll === "85000263";
+      const isFemale = FEMALE_SET.has(roll);
+      const num = parseInt(roll, 10);
+      const seed = (num * 31 + 17) % 1000;
+
+      STUDENTS_DATA[roll] = {
+        roll: roll,
+        regNo: "EL-GZP-" + roll,
+        name: isZahid ? "MD. ZAHIDUL ISLAM" : (isFemale ? femaleNames[idx % femaleNames.length] : maleNames[seed % maleNames.length]),
+        batch: isZahid ? "08" : batches[seed % batches.length],
+        course: "Freelancing",
+        branch: "GAZIPUR",
+        blood: isZahid ? "O+" : bloods[seed % bloods.length],
+        validity: "৩১/১২/২০২৭",
+        photo: isZahid ? "assets/aistudio/Zahid-300_300-2025_8642e1b6.jpeg" : ("assets/aistudio/photos/" + roll + ".jpg"),
+        emergency: isZahid ? "01716514100 (পিতা)" : ("017" + String(10000000 + ((seed * 7919) % 89999999)).slice(-8) + " (অফিস)"),
+        gender: isFemale ? "F" : "M",
+        issueDate: "০১/১০/২০২৬",
+        session: "২০২৬-২০২৭",
+        father: isZahid ? "সৈয়দ মোঃ আমির হোসেন" : fathers[(seed * 5 + 3) % fathers.length],
+        mother: isZahid ? "আনোয়ারা বেগম" : mothers[(seed * 7 + 1) % mothers.length]
+      };
+    });
+
+    // Avatar Fallback Generator
+    function getAvatarFallback(gender) {
+      const bg = gender === "F" ? "%23fdf2f8" : "%23eff6ff";
+      const fg = gender === "F" ? "%23db2777" : "%232563eb";
+      return "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' fill='none'><rect width='100' height='120' fill='" + bg + "'/><circle cx='50' cy='42' r='22' fill='" + fg + "'/><path d='M15 110c0-22 18-36 35-36s35 14 35 36' fill='" + fg + "'/></svg>";
+    }
+
+    // Vector QR SVG Generator
+    function getQrSvg(roll) {
+      return "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 33 33' shape-rendering='crispEdges'><path fill='%23ffffff' d='M0 0h33v33H0z'/><path stroke='%23004d38' stroke-width='1' d='M2 2h7v7H2zM4 4h3v3H4zM24 2h7v7h-7zM26 4h3v3h-3zM2 24h7v7H2zM4 26h3v3H4zM12 2h2m3 0h4m2 0h2M12 5h1m2 0h3m2 0h2M12 8h3m1 0h2m3 0h1M2 12h2m2 0h3m2 0h2m4 0h3m2 0h4M4 15h3m2 0h1m3 0h3m3 0h2m2 0h3M2 18h4m2 0h2m3 0h1m2 0h4m2 0h3M12 21h2m3 0h2m2 0h4M15 24h3m2 0h3m3 0h2M12 27h1m4 0h2m2 0h4M12 30h4m1 0h3m3 0h2'/></svg>";
+    }
+
+    let currentStudent = null;
+    let currentSide = 'front';
+
+    // Check URL query parameter on initial load (?roll=85000263)
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const urlRoll = params.get('roll');
+      if (urlRoll && STUDENTS_DATA[urlRoll.trim()]) {
+        document.getElementById('rollInputField').value = urlRoll.trim();
+        searchRoll(urlRoll.trim());
+      } else {
+        document.getElementById('rollInputField').value = '85000263';
+        searchRoll('85000263');
+      }
+      handleInputChange();
+    });
+
+    function handleInputChange() {
+      const clearBtn = document.getElementById('clearBtn');
+      const val = document.getElementById('rollInputField').value.trim();
+      clearBtn.style.display = val.length > 0 ? 'block' : 'none';
+    }
+
+    function clearSearchInput() {
+      const input = document.getElementById('rollInputField');
+      input.value = '';
+      input.focus();
+      handleInputChange();
+      hideError();
+    }
+
+    function executeSearch() {
+      const input = document.getElementById('rollInputField');
+      searchRoll(input.value.trim());
+    }
+
+    function searchRoll(roll) {
+      if (!roll) {
+        showError('অনুগ্রহ করে ৮-সংখ্যার সঠিক রোল নম্বর প্রদান করুন।');
+        return;
+      }
+
+      const student = STUDENTS_DATA[roll];
+      if (!student) {
+        showError('দুঃখিত! আপনার প্রদত্ত রোলটি ভ্যালিড ডেটাবেজে পাওয়া যায়নি। অনুমোদিত ৭৫টি রোলের মধ্যে সঠিক রোল নম্বর প্রদান করুন।');
+        document.getElementById('verificationSection').style.display = 'none';
+        currentStudent = null;
+        return;
+      }
+
+      hideError();
+      currentStudent = student;
+      currentSide = 'front';
+      updateCardUI();
+
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set('roll', roll);
+        window.history.replaceState({}, '', url.toString());
+      } catch (e) {}
+
+      triggerConfetti();
+    }
+
+    function showError(msg) {
+      const box = document.getElementById('errorBox');
+      document.getElementById('errorMessageText').textContent = msg;
+      box.style.display = 'flex';
+    }
+
+    function hideError() {
+      document.getElementById('errorBox').style.display = 'none';
+    }
+
+    function updateCardUI() {
+      if (!currentStudent) return;
+      const s = currentStudent;
+
+      document.getElementById('bannerRollBadge').textContent = 'ROLL: ' + s.roll;
+
+      // Card Front Elements (NO REG NO on Front)
+      const photoEl = document.getElementById('cardPhotoImg');
+      photoEl.src = s.photo;
+      photoEl.alt = s.name;
+      document.getElementById('cardStudentName').textContent = s.name;
+      document.getElementById('cardRollNo').textContent = s.roll;
+      document.getElementById('cardBatchNo').textContent = s.batch;
+      document.getElementById('cardCourse').textContent = s.course;
+      document.getElementById('cardBranch').textContent = s.branch;
+      document.getElementById('cardBlood').textContent = s.blood;
+      document.getElementById('cardEmergency').textContent = s.emergency || '01550-666900 (Office)';
+      document.getElementById('cardValidTill').textContent = s.validity;
+      document.getElementById('qrRollText').textContent = 'ROLL: ' + s.roll;
+      document.getElementById('cardQrContainer').innerHTML = getQrSvg(s.roll);
+
+      // Card Back Elements
+      document.getElementById('barcodeRollVal').textContent = '*' + s.roll + '*';
+      document.getElementById('backSessionTag').textContent = 'SESSION: ' + s.session;
+
+      // Comprehensive Profile Summary Section
+      document.getElementById('sumName').textContent = s.name;
+      document.getElementById('sumRoll').textContent = s.roll;
+      document.getElementById('sumReg').textContent = s.regNo;
+      document.getElementById('sumFather').textContent = s.father || '—';
+      document.getElementById('sumMother').textContent = s.mother || '—';
+      document.getElementById('sumBlood').textContent = s.blood;
+      document.getElementById('sumIssueDate').textContent = s.issueDate;
+      document.getElementById('sumSession').textContent = s.session;
+      document.getElementById('sumCourseBatch').textContent = s.course + ' (ব্যাচ ' + s.batch + ')';
+
+      document.getElementById('verificationSection').style.display = 'block';
+      applyCardSide();
+    }
+
+    function toggleCardSide() {
+      currentSide = currentSide === 'front' ? 'back' : 'front';
+      applyCardSide();
+    }
+
+    function applyCardSide() {
+      const front = document.getElementById('cardFront');
+      const back = document.getElementById('cardBack');
+      const flipBtnText = document.getElementById('flipBtnText');
+      const sideIndicator = document.getElementById('sideIndicator');
+
+      if (currentSide === 'front') {
+        front.style.display = 'flex';
+        back.style.display = 'none';
+        flipBtnText.textContent = 'কার্ডের পেছনের অংশ দেখুন (Back View)';
+        sideIndicator.textContent = '• সামনের অংশ';
+      } else {
+        front.style.display = 'none';
+        back.style.display = 'flex';
+        flipBtnText.textContent = 'কার্ডের সামনের অংশ দেখুন (Front View)';
+        sideIndicator.textContent = '• পেছনের অংশ';
+      }
+    }
+
+    function copyVerificationLink() {
+      if (!currentStudent) return;
+      const url = window.location.origin + window.location.pathname + '?roll=' + currentStudent.roll;
+      navigator.clipboard.writeText(url).then(() => {
+        const copyText = document.getElementById('copyBtnText');
+        const original = copyText.textContent;
+        copyText.textContent = 'কপি হয়েছে!';
+        setTimeout(() => {
+          copyText.textContent = original;
+        }, 2500);
+      }).catch(() => {
+        alert('ভেরিফিকেশন লিংক: ' + url);
+      });
+    }
+
+    function openCertificateModal() {
+      if (!currentStudent) return;
+      const s = currentStudent;
+
+      document.getElementById('certTrackId').textContent = 'VRF-' + s.roll + '-GZP';
+      document.getElementById('certStudentName').textContent = s.name;
+      document.getElementById('certFatherName').textContent = s.father || '—';
+      document.getElementById('certMotherName').textContent = s.mother || '—';
+      document.getElementById('certRollNo').textContent = s.roll;
+      document.getElementById('certRegNo').textContent = s.regNo;
+      document.getElementById('certBatchNo').textContent = s.batch;
+
+      document.getElementById('certModal').style.display = 'flex';
+    }
+
+    function closeCertificateModal() {
+      document.getElementById('certModal').style.display = 'none';
+    }
+
+    function openDirectoryModal() {
+      document.getElementById('dirSearchInput').value = '';
+      document.getElementById('dirGenderSelect').value = 'all';
+      document.getElementById('dirBatchSelect').value = 'all';
+      renderDirectoryList(ALL_ROLLS);
+      document.getElementById('directoryModal').style.display = 'flex';
+    }
+
+    function closeDirectoryModal() {
+      document.getElementById('directoryModal').style.display = 'none';
+    }
+
+    function filterDirectory() {
+      const query = document.getElementById('dirSearchInput').value.trim().toLowerCase();
+      const gender = document.getElementById('dirGenderSelect').value;
+      const batch = document.getElementById('dirBatchSelect').value;
+
+      const filtered = ALL_ROLLS.filter((roll) => {
+        const s = STUDENTS_DATA[roll];
+        if (!s) return false;
+
+        const matchesQuery = !query || s.roll.includes(query) || s.name.toLowerCase().includes(query);
+        const matchesGender = gender === 'all' || s.gender === gender;
+        const matchesBatch = batch === 'all' || s.batch === batch;
+
+        return matchesQuery && matchesGender && matchesBatch;
+      });
+
+      renderDirectoryList(filtered);
+    }
+
+    function renderDirectoryList(rolls) {
+      const container = document.getElementById('dirListContainer');
+      container.innerHTML = '';
+
+      document.getElementById('dirCountText').textContent = 'প্রদর্শিত রেকর্ড: ' + rolls.length + ' / ' + ALL_ROLLS.length;
+
+      if (rolls.length === 0) {
+        container.innerHTML = '<div style="padding:24px; text-align:center; color:#94a3b8; font-size:13px;">কোনো শিক্ষার্থী পাওয়া যায়নি।</div>';
+        return;
+      }
+
+      rolls.forEach((roll) => {
+        const s = STUDENTS_DATA[roll];
+        if (!s) return;
+
+        const item = document.createElement('div');
+        item.className = 'dir-item';
+        item.onclick = () => {
+          document.getElementById('rollInputField').value = s.roll;
+          handleInputChange();
+          searchRoll(s.roll);
+          closeDirectoryModal();
+        };
+
+        item.innerHTML = `
+          <div class="dir-item-left">
+            <img src="${s.photo}" alt="${s.name}" class="dir-avatar" onerror="this.onerror=null; this.src=getAvatarFallback('${s.gender}');">
+            <div>
+              <div class="dir-name">
+                ${s.name} ${s.roll === '85000263' ? '<span style="font-size:9px; background:#fbbf24; color:#0f172a; padding:1px 5px; border-radius:3px; font-weight:800;">FEATURED</span>' : ''}
+              </div>
+              <div class="dir-meta">
+                রোল: <strong>${s.roll}</strong> • ব্যাচ: ${s.batch} • রক্ত: <span style="color:#ef4444; font-weight:700;">${s.blood}</span>
+              </div>
+            </div>
+          </div>
+          <button class="dir-btn-view">যাচাই</button>
+        `;
+
+        container.appendChild(item);
+      });
+    }
+
+    // Celebration Confetti Particle Engine
+    function triggerConfetti() {
+      const canvas = document.getElementById('confettiCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      const particles = [];
+      const colors = ['#006a4e', '#f42a41', '#fbbf24', '#10b981', '#3b82f6'];
+
+      for (let i = 0; i < 60; i++) {
+        particles.push({
+          x: width * 0.5,
+          y: height * 0.6,
+          vx: (Math.random() - 0.5) * 16,
+          vy: (Math.random() - 0.7) * 18,
+          size: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 10,
+          life: 1,
+          decay: Math.random() * 0.02 + 0.015,
+          gravity: 0.4,
+        });
+      }
+
+      function update() {
+        ctx.clearRect(0, 0, width, height);
+        let alive = false;
+        particles.forEach((p) => {
+          if (p.life > 0) {
+            alive = true;
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += p.gravity;
+            p.rotation += p.rotSpeed;
+            p.life -= p.decay;
+
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.globalAlpha = Math.max(0, p.life);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+            ctx.restore();
+          }
+        });
+
+        if (alive) {
+          requestAnimationFrame(update);
+        } else {
+          ctx.clearRect(0, 0, width, height);
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+  </script>
+</body>
+</html>
